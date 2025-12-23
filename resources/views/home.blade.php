@@ -15,8 +15,8 @@
     <main>
         @auth
             <x-crear-publicacion/>
-            <x-publicaciones :publicaciones="$publicaciones"/>
         @endauth
+        <x-publicaciones :publicaciones="$publicaciones"/>
     </main>
 </body>
 </html>
