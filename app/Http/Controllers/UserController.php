@@ -23,7 +23,7 @@ class UserController extends Controller
     }
     public function register(Request $peticion) {
         $camposRecibidos = $peticion->validate([
-            "nombre" => ['required', 'min:3', 'max:12', Rule::unique("users", "name")],
+            "nombre" => ['required', 'min:3', 'max:16', Rule::unique("users", "name")],
             "email" => ['required', 'email', Rule::unique("users", "email")],
             "contraseña" => ['required', 'min:4', 'max:22'],
         ]);
