@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirige todo hacia public
+    RewriteBase /proyectoLaravel/
+    RewriteCond %{REQUEST_URI} !^/proyectoLaravel/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+
+    # Bloquea archivos sensibles
+    <FilesMatch "^(\.env|composer\.json|composer\.lock|artisan|vendor|storage)">
+        Require all denied
+    </FilesMatch>
+</IfModule>
